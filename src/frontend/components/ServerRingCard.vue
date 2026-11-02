@@ -17,9 +17,9 @@
       </div>
       <div class="server-meta">
         <div class="card-meta">
-          <div v-if="sysConfig.show_price && priceText" class="card-meta-item">💰 {{ priceText }}</div>
+          <div v-if="sysConfig.show_price && priceText" class="card-meta-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-svg-icon"><circle cx="12" cy="12" r="10"></circle><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path><path d="M12 6v2"></path><path d="M12 16v2"></path></svg> {{ priceText }}</div>
           <div v-if="sysConfig.show_expire && server.expire_date" class="card-meta-item card-meta-expire">
-            📅 <span :class="{ 'expired': isExpired }">{{ expireText }}</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-svg-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <span :class="{ 'expired': isExpired }">{{ expireText }}</span>
             <span v-if="expireDateTitle" class="card-meta-tooltip">{{ expireDateTitle }}</span>
           </div>
         </div>

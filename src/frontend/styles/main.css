@@ -1980,8 +1980,21 @@ body::before {
    -------------------------------------------------------------------------- */
 .servers-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 12px;
+}
+
+@media (min-width: 1200px) {
+    .servers-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.inline-svg-icon {
+    display: inline-block;
+    vertical-align: -2px;
+    margin-right: 4px;
+    stroke: currentColor;
 }
 
 /* Skip layout and paint work for cards outside the viewport. */

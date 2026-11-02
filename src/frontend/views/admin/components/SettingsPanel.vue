@@ -284,7 +284,7 @@
             <div class="password-input-wrapper">
               <input type="text" name="tg_bot_token" autocomplete="off" data-lpignore="true" data-1p-ignore="true" data-bwignore="true" data-form-type="other" v-model="settings.tg_bot_token" :class="['form-input', { 'secret-input-masked': !passwordVisible.tgBotToken }]" placeholder="Bot Token or Webhook URL">
               <button type="button" class="password-toggle" @click="$emit('toggle-password', 'tgBotToken')">
-                {{ passwordVisible.tgBotToken ? '🙈' : '👁️' }}
+                <span class='text-xs font-mono'>{{ passwordVisible.tgBotToken ? 'HIDE' : 'SHOW' }}</span>
               </button>
             </div>
           </div>
@@ -294,7 +294,7 @@
             <div class="password-input-wrapper">
               <input type="text" name="tg_chat_id" autocomplete="off" data-lpignore="true" data-1p-ignore="true" data-bwignore="true" data-form-type="other" v-model="settings.tg_chat_id" :class="['form-input', { 'secret-input-masked': !passwordVisible.tgChatId }]" placeholder="Optional Chat ID">
               <button type="button" class="password-toggle" @click="$emit('toggle-password', 'tgChatId')">
-                {{ passwordVisible.tgChatId ? '🙈' : '👁️' }}
+                <span class='text-xs font-mono'>{{ passwordVisible.tgChatId ? 'HIDE' : 'SHOW' }}</span>
               </button>
             </div>
           </div>
@@ -347,7 +347,7 @@
               <div class="password-input-wrapper">
                 <input type="text" name="smtp_password" autocomplete="new-password" data-lpignore="true" data-1p-ignore="true" data-bwignore="true" data-form-type="other" v-model="smtpConfig.password" @blur="validateSmtpField('password')" :class="['form-input', { 'secret-input-masked': !passwordVisible.smtpPassword }]" placeholder="SMTP password / app password">
                 <button type="button" class="password-toggle" @click="$emit('toggle-password', 'smtpPassword')">
-                  {{ passwordVisible.smtpPassword ? '🙈' : '👁️' }}
+                  <span class='text-xs font-mono'>{{ passwordVisible.smtpPassword ? 'HIDE' : 'SHOW' }}</span>
                 </button>
               </div>
               <p v-if="smtpErrors.password" class="text-danger text-sm">{{ smtpErrors.password }}</p>
@@ -391,7 +391,7 @@
                   placeholder="https://example.com/webhook"
                 >
                 <button type="button" class="password-toggle" @click="$emit('toggle-password', 'notificationWebhookUrl')">
-                  {{ passwordVisible.notificationWebhookUrl ? '🙈' : '👁️' }}
+                  <span class='text-xs font-mono'>{{ passwordVisible.notificationWebhookUrl ? 'HIDE' : 'SHOW' }}</span>
                 </button>
               </div>
             </div>
@@ -630,7 +630,7 @@
             <div class="password-input-wrapper">
               <input type="text" name="turnstile_secret_key" autocomplete="off" data-lpignore="true" data-1p-ignore="true" data-bwignore="true" data-form-type="other" v-model="settings.turnstile_secret_key" :class="['form-input', { 'secret-input-masked': !passwordVisible.turnstileSecret }]" :placeholder="trans.turnstileSecretKeyPlaceholder">
               <button type="button" class="password-toggle" @click="$emit('toggle-password', 'turnstileSecret')">
-                {{ passwordVisible.turnstileSecret ? '🙈' : '👁️' }}
+                <span class='text-xs font-mono'>{{ passwordVisible.turnstileSecret ? 'HIDE' : 'SHOW' }}</span>
               </button>
             </div>
           </div>
@@ -645,7 +645,7 @@
             <div class="password-input-wrapper">
               <input type="text" name="jwt_secret" autocomplete="off" data-lpignore="true" data-1p-ignore="true" data-bwignore="true" data-form-type="other" v-model="settings.jwt_secret" :class="['form-input', { 'secret-input-masked': !passwordVisible.jwtSecret }]" placeholder="••••••••••••••••••••••••••••••••">
               <button type="button" class="password-toggle" @click="$emit('toggle-password', 'jwtSecret')">
-                {{ passwordVisible.jwtSecret ? '🙈' : '👁️' }}
+                <span class='text-xs font-mono'>{{ passwordVisible.jwtSecret ? 'HIDE' : 'SHOW' }}</span>
               </button>
             </div>
           </div>
@@ -670,7 +670,7 @@
                 :placeholder="trans.customUserAgentPlaceholder"
               >
               <button type="button" class="password-toggle" @click="$emit('toggle-password', 'ua')">
-                {{ passwordVisible.ua ? '🙈' : '👁️' }}
+                <span class='text-xs font-mono'>{{ passwordVisible.ua ? 'HIDE' : 'SHOW' }}</span>
               </button>
             </div>
             <p v-if="userAgentInvalid" class="text-red text-sm mt-1">{{ trans.customUserAgentInvalid }}</p>
@@ -696,7 +696,7 @@
             <div class="password-input-wrapper">
               <input type="text" name="cloudflare_token" autocomplete="off" data-lpignore="true" data-1p-ignore="true" data-bwignore="true" data-form-type="other" v-model="settings.cloudflare_token" :class="['form-input', { 'secret-input-masked': !passwordVisible.cloudflareToken }]" :placeholder="trans.cloudflareTokenPlaceholder">
               <button type="button" class="password-toggle" @click="$emit('toggle-password', 'cloudflareToken')">
-                {{ passwordVisible.cloudflareToken ? '🙈' : '👁️' }}
+                <span class='text-xs font-mono'>{{ passwordVisible.cloudflareToken ? 'HIDE' : 'SHOW' }}</span>
               </button>
             </div>
           </div>
@@ -753,7 +753,7 @@
                 :placeholder="settings.password_configured ? '••••••••' : ''"
               >
               <button type="button" class="password-toggle" @click="$emit('toggle-password', 'password')">
-                {{ passwordVisible.password ? '🙈' : '👁️' }}
+                <span class='text-xs font-mono'>{{ passwordVisible.password ? 'HIDE' : 'SHOW' }}</span>
               </button>
             </div>
           </div>
@@ -774,7 +774,7 @@
                 :placeholder="settings.password_configured ? '••••••••' : ''"
               >
               <button type="button" class="password-toggle" @click="$emit('toggle-password', 'confirmPassword')">
-                {{ passwordVisible.confirmPassword ? '🙈' : '👁️' }}
+                <span class='text-xs font-mono'>{{ passwordVisible.confirmPassword ? 'HIDE' : 'SHOW' }}</span>
               </button>
             </div>
           </div>
